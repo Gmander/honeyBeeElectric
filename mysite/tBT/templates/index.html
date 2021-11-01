@@ -17,7 +17,7 @@
     <script type="text/javascript" src="/static/js/logic.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
+    <link rel="shortcut icon" href="/static/img/websiteHeadLogo.svg">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     
@@ -139,7 +139,7 @@
                         <div class="header-row">
                             <div class="header-logo">
                                 <a href="/">
-                                    <img alt="Porto" width="300" height="auto" data-sticky-width="175" data-sticky-height="auto" src="/static/img/tbtLogoFinal-2.jpg">
+                                    <img alt="Porto" width="300" height="auto" data-sticky-width="175" data-sticky-height="auto" src="/static/img/tbtLogoFinal-3.jpg">
                                 </a>
                             </div>
                         </div>
@@ -189,58 +189,16 @@
             </div>
         </div>
     </header>
-  <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark shadow-lg p-0">
-    <div class="container-fluid" id="stayy">
-      <div class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav">
-          <li class="nav-item1">
-            <a class="nav-link" aria-current="page" href="tel:813421-2192"><i class="fas fa-phone-alt"> (813) 421-2192</i></a>
-          </li>
-          <li class="nav-item"><p class="quiet">--------</p></li>
-          <li class="nav-item1">
-            <a class="nav-link" href="mailto:DrDurrance@me.com"><i class="far fa-envelope"> DrDurrance@me.com</i></a>
-          </li>
-          <li class="nav-item1">
-            <a class="nav-link" href="https://www.linkedin.com/in/aidan-arnold/" style="color: Dodgerblue;"><i class="fab fa-linkedin"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-    <nav class="navbar navbar-expand-sm navbar-light shadow-lg p-2 justify-content-end" id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/" style="color: #564A4A" id="logo-img"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="assessments">Assessments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about" tabindex="-1">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services" tabindex="-1">Forms/FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contactUs" tabindex="-1">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
   
   {% if messages %}
     {% for message in messages %}
     
     <div class="alert alert-primary bigboy" role="alert">
-      <p class="tomm">Thank you for your submission!</p>
+      <strong>Thank you for your submission!</strong>
     </div>
+    <!-- <div class="alert alert-primary">
+      <strong>Well done!</strong> You are using a awesome template! <a href="#" class="alert-link">Say Hi to Porto </a>.
+    </div> -->
 
     <!-- <script>
       alert("Thank you for your submission!");
@@ -392,7 +350,7 @@
         </div>
         <div class="col-md-6 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
           <h3 class="font-weight-bold mb-3" style="font-size: 18pt;">Our Vision</h3>
-          <p  style="font-size: 13pt;font-family: 'Merriweather', serif; line-height: 25pt;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolorem labore dignissimos explicabo ipsam quisquam doloribus qui in delectus, tempora repellendus quae deleniti eveniet fugiat illum illo aspernatur ratione libero?</p>
+          <p  style="font-size: 13pt;font-family: 'Merriweather', serif; line-height: 25pt;">To see a world where people have access to accurate diagnoses, and are aware of their mental coherence. </p>
         </div>
 
       </div>
@@ -498,7 +456,8 @@
                     <div class="col-lg-6 text-center pt-5">
                       <h2 class="text-8 line-height-4 text-lg-10 line-height-lg-1 font-weight-semibold"  style="color: white;">Send us a Message</h2>
 
-                      <form class="contact-form form-errors-light" action="php/contact-form.php" method="POST">
+                      <form class="contact-form form-errors-light" method="POST">
+                        {% csrf_token %}
                         <input type="hidden" value="Contact Form" name="subject" id="subject">
                         <div class="form-group col-lg-12 ms-auto">
                           <div class="contact-form-success alert alert-success d-none">
