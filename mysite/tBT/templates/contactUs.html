@@ -256,7 +256,8 @@
         <p class="text-2 font-weight-semibold mb-0 pb-0"  style="color: white;">LET'S TALK ABOUT YOU</p>
         <h2 class="text-8 line-height-4 text-lg-10 line-height-lg-1 font-weight-semibold"  style="color: white;">Send us a Message</h2>
         <p class="text-4 font-weight-normal px-3 mb-3" style="color: white;">Enter your personal info below and let's start talking about how we can help you.</p>
-        <form class="contact-form form-errors-light" action="php/contact-form.php" method="POST">
+        <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
           <input type="hidden" value="Contact Form" name="subject" id="subject">
           <div class="form-group col-lg-12 ms-auto">
             <div class="contact-form-success alert alert-success d-none">
@@ -293,9 +294,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="form-group col">
+            <!-- <div class="form-group col">
               <input type="submit" value="SUBMIT" class="btn btn-primary font-weight-semi-bold mb-lg-5 px-5 py-3" data-loading-text="Loading...">
-            </div>
+            </div> -->
+            <div class="text-center">
+              <button class="btn btn-light btn-xl text-uppercase" id="sendMessageButton" type="submit">Submit</button>
+          </div>
           </div>
         </form>
       </div>
