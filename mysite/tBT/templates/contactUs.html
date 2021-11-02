@@ -87,7 +87,7 @@
 
 
 
-
+    <link rel="shortcut icon" href="/static/img/websiteHeadLogo.svg">
 
     <!-- Custom styles (these can extend bootstrap which is JUST CSS!) -->
     <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
@@ -189,7 +189,7 @@
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="/">
-                                <img alt="Porto" width="300" height="auto" data-sticky-width="175" data-sticky-height="auto" src="/static/img/tbtLogoFinal-2.jpg">
+                                <img alt="Porto" width="300" height="auto" data-sticky-width="175" data-sticky-height="auto" src="/static/img/tbtLogoFinal-3.jpg">
                             </a>
                         </div>
                     </div>
@@ -249,6 +249,28 @@
     </div>
   </div>
 </section>
+{% if messages %}
+    {% for message in messages %}
+    
+    <div class="alert alert-primary bigboy" role="alert">
+      <strong>Thank you for your submission!</strong>
+    </div>
+    <!-- <div class="alert alert-primary">
+      <strong>Well done!</strong> You are using a awesome template! <a href="#" class="alert-link">Say Hi to Porto </a>.
+    </div> -->
+
+    <!-- <script>
+      alert("Thank you for your submission!");
+    </script> -->
+    <!-- <div class="container colorBGN2">
+      <div class="row">
+        <div class="col col-12">
+            <h1  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </h1>
+        </div>
+      </div>
+    </div> -->
+    {% endfor %}
+{% endif %}
   <section>
   <div class="container">
     <div class="row justify-content-center py-5">
@@ -256,7 +278,7 @@
         <p class="text-2 font-weight-semibold mb-0 pb-0"  style="color: white;">LET'S TALK ABOUT YOU</p>
         <h2 class="text-8 line-height-4 text-lg-10 line-height-lg-1 font-weight-semibold"  style="color: white;">Send us a Message</h2>
         <p class="text-4 font-weight-normal px-3 mb-3" style="color: white;">Enter your personal info below and let's start talking about how we can help you.</p>
-        <form enctype="multipart/form-data" method="POST">
+        <form class="contact-form form-errors-light" method="POST">
           {% csrf_token %}
           <input type="hidden" value="Contact Form" name="subject" id="subject">
           <div class="form-group col-lg-12 ms-auto">

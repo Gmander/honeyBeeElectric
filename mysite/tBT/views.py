@@ -63,7 +63,6 @@ class contactUs(View):
         form = Form1(request.POST)
         if form.is_valid():
             
-            
             messages.success(self.request, 'Form submission successful')
             name = form.cleaned_data['name']
             phone = form.cleaned_data['phone']
